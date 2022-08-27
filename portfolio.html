@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thamizhiniyan's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        .custom-link {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Project title hover behaviour */
+        a:hover>h2 {
+            color: bisque;
+        }
+
+        /* Tab label hover behaviour */
+        .label-link:hover {
+            color: bisque;
+        }
+
+        /* Project description text color */
+        .text-grey {
+            color: #b5b5b5;
+        }
+
+        /* Project title text color */
+        .text-aqua {
+            color: #28c1f4;
+            font-size: 26px;
+        }
+
+        /* Section title text color */
+        .text-bisque {
+            color: bisque;
+        }
+
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+
+        /* Styling of tabs starts here */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #fff;
+            border-radius: 2px;
+        }
+
+        .tabs label {
+            order: 1;
+            display: block;
+            padding: 0.5rem 2rem;
+            margin-right: 0;
+            cursor: pointer;
+            background: #000;
+            font-weight: bold;
+            width: 50%;
+        }
+
+        .tabs .tab {
+            order: 99;
+            flex-grow: 1;
+            width: 100%;
+            display: none;
+            padding: 1rem;
+            background: #000;
+        }
+
+        .tabs input[type="radio"] {
+            display: none;
+        }
+
+        /* checked tab label color */
+        .tabs input[type="radio"]:checked+label {
+            color: #28c1f4;
+        }
+
+        .tabs input[type="radio"]:checked+label.label-one {
+            border-right: 1px solid #fff;
+            border-bottom: none;
+        }
+
+        .tabs input[type="radio"]:checked+label.label-two {
+            border-left: 1px solid #fff;
+            border-bottom: none;
+        }
+
+        .tabs input[type="radio"]+label.label-two,
+        .tabs input[type="radio"]+label.label-one {
+            border-bottom: 1px solid #fff;
+        }
+
+        .tabs input[type="radio"]:checked+label+.tab {
+            display: block;
+        }
+
+        /* Styling of tabs ends here */
+
+        .fs-42 {
+            font-size: 42px;
+        }
+
+        .contact-fs {
+            font-size: 15px;
+        }
+
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+
+        @media (max-width: 740px) {
+            h2 {
+                font-size: 24px;
+            }
+
+            .text-aqua {
+                font-size: 20px;
+            }
+
+            .contact-fs{
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <!-- <img src="/w3images/avatar_smoke.jpg" style="width:100%"> -->
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>PROJECTS</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="fs-42"><span class="w3-hide-small">I'm </span>Thamizhiniyan Pugazhenthi</h1>
+            <p>Data Science and Machine Learning Enthusiast</p>
+            <!-- <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108"> -->
+            <a href="https://github.com/Tamizh2907/" target="_blank" class="fa fa-github w3-hover-opacity"
+                style="font-size: x-large; padding-right: 8px; text-decoration: none;"></a>
+            <a href="https://www.linkedin.com/in/thamizhiniyan-pugazhenthi-92924a102/" target="_blank"
+                class="fa fa-linkedin w3-hover-opacity" style="font-size: x-large; text-decoration: none;"></a>
+        </header>
+
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="text-bisque">Me</h2>
+            <p class="w3-text-white">A postgraduate student studying MSc Data Science with specialisation in Artificial
+                Intelligence in Newcastle University, United Kingdom. I have a Bachelor of Technology degree in
+                Information
+                Technology from Madras Institute of Technology, India. I was a Data Engineer in Infosys Ltd. and an
+                Operations
+                Executive in Gobumpr for a combined period of 3+ years. The most important aspects of my work were Data
+                warehousing, Data Management, Data Analysis, Data Migration with Amazon Web Services and Application
+                development. With the skills and information, I gained from my PG Course, I am looking forward to
+                shifting my
+                career path.
+                During my three years in those companies, I learned the processes and systems of the business, which
+                helped me
+                deliver on the client's expectations and objectives.
+            </p>
+            <h3 class="text-bisque">Skills</h3>
+            <p class="w3-text-white">Python, R, Power BI, SQL and PySpark</p>
+
+            <!-- Main -->
+            <div>
+                <div class="w3-padding-64 w3-content" id="projects">
+                    <h2 class="text-bisque">Projects</h2>
+                    <div class="tabs">
+                        <input type="radio" name="tabs" id="tabone" checked="checked">
+                        <label for="tabone" class="label-one label-link">
+                            <h2><a>Data Analysis Projects</a></h2>
+                        </label>
+                        <div class="tab">
+                            <section class="posts">
+                                <article>
+                                    <header class="w3-text-light-grey">
+                                        <a href="https://github.com/Tamizh2907/LearningAnalytics" target="_blank"
+                                            class="button custom-link">
+                                            <h2 class="text-aqua">Exploratory data analysis on the dataset of cyber
+                                                security course from
+                                                FutureLearn - a digital
+                                                education platform
+                                            </h2>
+                                        </a>
+                                    </header>
+                                    <p class="text-grey">
+                                        In FutureLearn MOOC data set, there are different sets of data files from seven
+                                        different runs of cyber
+                                        security course on different time frames from FutureLearn website. Each set
+                                        contains
+                                        enrollments,
+                                        questionresponse, step activity, team members, video stats, weekly sentiment
+                                        survey,
+                                        leaving survey and
+                                        archetypes. Different analyses have been drawn regarding similarities,
+                                        differences,
+                                        positives,
+                                        negatives, and the improvements they can make along with the recommendations we
+                                        can tell
+                                        the FutureLearn
+                                        team to enhance the user experience.<br />
+                                        Languages and Tools - R, tidyverse, ggplot2
+                                    </p>
+                                </article>
+                                <article>
+                                    <header class="w3-text-light-grey">
+                                        <a href="https://github.com/Tamizh2907/FacebookAnalytics" target="_blank"
+                                            class="button custom-link">
+                                            <h2 class="text-aqua">Exploratory data analysis on the dataset of Facebook's
+                                                Altoona data
+                                                center</h2>
+                                        </a>
+                                    </header>
+                                    <p class="text-grey">
+                                        The network traffic observed in the Altoona Facebook datacenter is the subject
+                                        of this
+                                        project. There
+                                        are three clusters in the data center i.e., Cluster A is for Database, Cluster B
+                                        is for
+                                        Web servers and
+                                        Cluster C is for Hadoop servers. Since we are working only with Cluster A and
+                                        Cluster C,
+                                        both of them
+                                        have same set of columns. Each has 273 bz2 files in compressed format. Upon
+                                        decompressing, each file is
+                                        of tsv type with columns - timestamp, packet length, anonymized source IP,
+                                        anonymized
+                                        destination IP,
+                                        anonymized source L4 Port, anonymized destination L4 Port, IP protocol,
+                                        anonymized
+                                        source hostprefix,
+                                        anonymized destination hostprefix, anonymized source Rack, anonymized
+                                        destination Rack,
+                                        anonymized
+                                        source Pod, anonymized destination Pod, intercluster, interdatacenter. All the
+                                        data
+                                        fields are
+                                        anonymized for confidentiality. We analysed the dataset with respect to each of
+                                        the
+                                        above columns to
+                                        identify the characteristics of the dataset.<br />
+                                        Languages and Tools - R, tidyverse, ggplot2, ggnetwork
+                                    </p>
+                                </article>
+                                <article>
+                                    <header class="w3-text-light-grey">
+                                        <a href="https://github.com/Tamizh2907/BigDataAnalyticsProject" target="_blank"
+                                            class="button custom-link">
+                                            <h2 class="text-aqua">Big Data Analytics with PySpark</h2>
+                                        </a>
+                                    </header>
+                                    <p class="text-grey">
+                                        Working with New York city taxi dataset with five dataset sizes - 'S', 'M', 'L',
+                                        'XL'
+                                        and 'XXL' and two
+                                        formats - parquet and delta. </br>
+                                        Inputs -
+                                        NYC Taxi Trips dataset - list of recorded taxi trips, each with several
+                                        characteristics,
+                                        namely:
+                                        distance, number of passengers, origin zone, destination zone and trip cost
+                                        (total
+                                        amount charged to
+                                        customer).</br>
+                                        NYC Zones dataset - list of zones wherein trips can originate/terminate.
+                                        <br />
+                                        Tasks -
+                                        Data Cleaning
+                                        Add new columns
+                                        Zone summarisation and ranking
+                                        Record the total and task-specific execution times for each dataset size and
+                                        format
+
+                                        Languages and Tools - PySpark, pandas
+                                    </p>
+                                </article>
+                            </section>
+
+                        </div>
+                        <input type="radio" name="tabs" id="tabtwo">
+                        <label for="tabtwo" class="label-two label-link">
+
+                            <h2><a>Machine Learning Projects</a></h2>
+
+                        </label>
+                        <div class="tab">
+                            <section class="posts">
+                                <article>
+                                    <header class="w3-text-light-grey">
+                                        <a href="https://github.com/Tamizh2907/MachineLearningDriverdistraction"
+                                            target="_blank" class="button custom-link">
+                                            <h2 class="text-aqua">State Farm Distracted Driver Detection</h2>
+                                        </a>
+                                    </header>
+                                    <p class="text-grey">
+                                        The goal of this project is to detect distracted driver images of the set of
+                                        input
+                                        images with the help
+                                        of machine learning. The original question was originally adapted from one of
+                                        the kaggle
+                                        prediction
+                                        competitions - https://www.kaggle.com/c/state-farm-distracted-driver-detection.
+                                        The
+                                        process started with
+                                        the data pre-processing method which includes the preparation of images with the
+                                        necessary folder
+                                        structure according to the libraries I am going to use. The project was planned
+                                        with
+                                        with k-fold cross
+                                        validation. With sklearn and stratified kfold, the CNN model used eleven splits
+                                        since
+                                        the number of
+                                        classes is ten, but the process could not cross one iteration since I used three
+                                        layers
+                                        with 1024, 512
+                                        and output layer is 10 for 10 different classes. Since it cannot afford the
+                                        (73728*1024)
+                                        trainable
+                                        parameters after one iteration due to OOM (Out of memory) error, I was forced to
+                                        change
+                                        my code to
+                                        normal training-validation with one iteration. After 100 epochs, 97% training
+                                        accuracy
+                                        was achieved and
+                                        more than 96% validation accuracy with the training loss is less than 0.1 and
+                                        validation
+                                        loss is 0.144.
+                                        <br />
+                                        Languages and Tools - Python, kaggle, Tensorflow 2.8.0, CNN, pandas, matplotlib.
+                                    </p>
+                                </article>
+                                <article>
+                                    <header class="w3-text-light-grey">
+                                        <a href="https://github.com/Tamizh2907/DeepLearningProject/blob/main/cyclegan.ipynb"
+                                            target="_blank" class="button custom-link">
+                                            <h2 class="text-aqua">CycleGAN</h2>
+                                        </a>
+                                    </header>
+                                    <p class="text-grey">
+                                        Used an existing model – CycleGAN to implement the unpaired image to image
+                                        translation
+                                        between human
+                                        faces and cats/dogs.<br />
+                                        Languages and Tools - Python, Tensorflow 2.8.0, GAN, Colab, Reinforcement
+                                        learning.
+                                    </p>
+                                </article>
+                                <article>
+                                    <header class="w3-text-light-grey">
+                                        <a href="https://github.com/Tamizh2907/DeepLearningProject/blob/main/Birdsclassification.ipynb"
+                                            target="_blank" class="button custom-link">
+                                            <h2 class="text-aqua">Birds classification</h2>
+                                        </a>
+                                    </header>
+                                    <p class="text-grey">
+                                        Utilised VGG16 pre-trained weights from ImageNet, classified birds of over 250
+                                        classes
+                                        and constructed
+                                        the code with TensorFlow and Keras. The execution time was shortened by using
+                                        prefetch
+                                        for parallel
+                                        processing. Data augmentation was used to avoid overfitting. Increased accuracy
+                                        by over
+                                        96% with good
+                                        precision and recall score.<br />
+                                        Languages and Tools - Python, Tensorflow 2.8.0, CNN, Anaconda, Reinforcement
+                                        learning,
+                                        pandas, NumPy,
+                                        scikit-learn.
+                                    </p>
+                                </article>
+                                <article>
+                                    <header class="w3-text-light-grey">
+                                        <a href="https://github.com/Tamizh2907/DeepLearningProject/blob/main/textgenerationnlp.ipynb"
+                                            target="_blank" class="button custom-link">
+                                            <h2 class="text-aqua">Language model - Next word prediction</h2>
+                                        </a>
+                                    </header>
+                                    <p class="text-grey">
+                                        Built model with the embedding layer, LSTM layer and dense layer with the
+                                        softmax
+                                        activation function.
+                                        Achieved up to 91% accuracy with the model which can improve further with more
+                                        epochs.
+                                        Tokenizer was
+                                        used to improve word mapping.<br />
+                                        Languages and Tools - Python, Keras, Tensorflow 2.8.0, LSTM, Tokenizer,
+                                        Anaconda.
+                                    </p>
+                                </article>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Section -->
+                <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                    <h2 class="text-bisque">Contact Me</h2>
+                    <div class="w3-section contact-fs">
+                        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>Newcastle
+                            upon Tyne, UK
+                        </p>
+                        <!-- <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p> -->
+                        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i>Email:
+                            thamizhiniyan2907@gmail.com</p>
+                    </div><br>
+                    <p>Let's get in touch. Send me a message:</p>
+
+                    <!-- <form action="/action_page.php" target="_blank">
+                        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name">
+                        </p>
+                        <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email">
+                        </p>
+                        <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required
+                                name="Subject"></p>
+                        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required
+                                name="Message"></p>
+                        <p>
+                            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                                <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                            </button>
+                        </p>
+                    </form> -->
+                    <!-- End Contact Section -->
+                </div>
+            </div>
+            <!-- END PAGE CONTENT -->
+        </div>
+    </div>
+</body>
+
+</html>
