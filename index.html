@@ -361,31 +361,7 @@
                                         the kaggle
                                         prediction
                                         competitions - https://www.kaggle.com/c/state-farm-distracted-driver-detection.
-                                        The
-                                        process started with
-                                        the data pre-processing method which includes the preparation of images with the
-                                        necessary folder
-                                        structure according to the libraries I am going to use. The project was planned
-                                        with
-                                        with k-fold cross
-                                        validation. With sklearn and stratified kfold, the CNN model used eleven splits
-                                        since
-                                        the number of
-                                        classes is ten, but the process could not cross one iteration since I used three
-                                        layers
-                                        with 1024, 512
-                                        and output layer is 10 for 10 different classes. Since it cannot afford the
-                                        (73728*1024)
-                                        trainable
-                                        parameters after one iteration due to OOM (Out of memory) error, I was forced to
-                                        change
-                                        my code to
-                                        normal training-validation with one iteration. After 100 epochs, 97% training
-                                        accuracy
-                                        was achieved and
-                                        more than 96% validation accuracy with the training loss is less than 0.1 and
-                                        validation
-                                        loss is 0.144.
+                                        After 100 epochs, 97% accuracy was achieved.
                                         <br />
                                         Languages and Tools - Python, kaggle, Tensorflow 2.8.0, CNN, pandas, matplotlib.
                                     </p>
